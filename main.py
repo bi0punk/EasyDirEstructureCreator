@@ -10,7 +10,7 @@ print("hola mundo")
 Art=text2art("< Fast-Flask >")
 print(Art)
 # Create the menu
-menu = ConsoleMenu(""+str(Art), "Simple tool for setup flask project structure")
+menu = ConsoleMenu("", ""+str(Art))
 
 # Create some items
 
@@ -24,7 +24,7 @@ menu = ConsoleMenu(""+str(Art), "Simple tool for setup flask project structure")
 
 # A FunctionItem runs a Python function when selected
 # Un elemento de función ejecuta una función de Python cuando se selecciona
-function_item = FunctionItem("Call a Python function", input, ["Enter an input"])
+function_item = FunctionItem("Flask Blank Project", input, ["Enter an input"])
 
 
 # Un CommandItem ejecuta un comando de consola
