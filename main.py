@@ -2,7 +2,7 @@
 from consolemenu import *
 from consolemenu.items import *
 from art import *
-
+import os
 a = tprint("flAKS")
 print(a)
 print("hola mundo")
@@ -10,6 +10,27 @@ print("hola mundo")
 Art=text2art("< Fast-Flask >")
 print(Art)
 # Create the menu
+
+
+
+
+def crea_directorio():
+    os.makedirs('dir1/dir2/dir3', exist_ok=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 menu = ConsoleMenu("", ""+str(Art))
 
 # Create some items
@@ -24,7 +45,7 @@ menu = ConsoleMenu("", ""+str(Art))
 
 # A FunctionItem runs a Python function when selected
 # Un elemento de función ejecuta una función de Python cuando se selecciona
-function_item = FunctionItem("Flask Blank Project", input, ["Enter an input"])
+function_item = FunctionItem("Flask Blank Project", input, ["Enter an input "])
 
 
 # Un CommandItem ejecuta un comando de consola
