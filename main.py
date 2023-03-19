@@ -7,7 +7,7 @@ a = tprint("flAKS")
 print(a)
 print("hola mundo")
 
-Art=text2art("< Fast-Flask >")
+Art=text2art("<Fast-Flask>")
 print(Art)
 # Create the menu
 
@@ -16,20 +16,6 @@ print(Art)
 
 def crea_directorio():
     os.makedirs('dir1/dir2/dir3', exist_ok=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 menu = ConsoleMenu("", ""+str(Art))
 
