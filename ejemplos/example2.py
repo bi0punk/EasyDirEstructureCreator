@@ -28,9 +28,9 @@ def main():
 
     # Create a menu item that calls a system command, based on OS type
     if sys.platform.startswith('win'):
-        command_item = CommandItem("Command", 'cmd /c \"echo this is a shell. Press enter to continue." && set /p=\"')
+        command_item = CommandItem("Command", 'cmd /c \"echo Esta es una shell. Presione enter para continuar,this is a shell. Press enter to continue." && set /p=\"')
     else:
-        command_item = CommandItem("Command", 'sh -c \'echo "this is a shell. Press enter to continue."; read\'')
+        command_item = CommandItem("Command", 'sh -c \'echo "Esta es una shell. this is a shell. Presione enter para continuar, Press enter to continue."; read\'')
 
     # Create a submenu using a Selection Menu, which takes a list of strings to create the menu items. This
     # submenu is passed the same formatter object, to keep its formatting consistent.
