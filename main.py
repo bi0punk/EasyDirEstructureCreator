@@ -42,7 +42,10 @@ command_item = CommandItem("Run a console command",  "ls > data.txt")
 
 # A SelectionMenu constructs a menu from a list of strings
 # Un SelectionMenu construye un menú a partir de una lista de cadenas
-selection_menu = SelectionMenu(["item1", "item2", "item3"])
+selection_menu = SelectionMenu(["Crea Directorio".crea_directorio, "item2", "item3"])
+selection_menu_1 = SelectionMenu(["item1", "item2", "item3"])
+selection_menu_2 = SelectionMenu(["item1", "item2", "item3"])
+
 
 
 
@@ -50,9 +53,10 @@ selection_menu = SelectionMenu(["item1", "item2", "item3"])
 # as a submenu of another menu
 
 # Un SubmenuItem le permite agregar un menú (el menú de selección anterior, por ejemplo)
-# como submenú de otro menú
-
-submenu_item = SubmenuItem("Submenu item", selection_menu, menu)
+# como submenú de otro menú1
+submenu_item = SubmenuItem("Simple blank flask proyect", selection_menu, menu)
+submenu_item_1 = SubmenuItem("Simple flask web app with Bootstrap", selection_menu, menu)
+submenu_item_2 = SubmenuItem("Simple flask web app with Tailwind css templates", selection_menu, menu)
 
 # Once we're done creating them, we just add the items to the menu
 # Una vez que hayamos terminado de crearlos, solo agregamos los elementos al menú

@@ -1,15 +1,15 @@
-# Battery Notifier
-# pip instal plyer
 from plyer import notification
 import psutil
 from time import sleep
 while True:
     battery = psutil.sensors_battery()
     life = battery.percent
-    if life > 50:
+    print(life)
+    print(type(life))
+    if life > 80 or 50:
         notification.notify(
-            title = "Battery Low",
-            message = "Please connect to power source",
+            title = "bateria baja",
+            message = "conectar eneregis",
             timeout = 10
         )
     sleep(60)
