@@ -7,7 +7,7 @@ a = tprint("flAKS")
 print(a)
 print("hola mundo")
 
-Art=text2art("<Fast-Flask>")
+Art=text2art("<FAST-FLASK>")
 print(Art)
 # Create the menu
 
