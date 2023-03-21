@@ -22,10 +22,13 @@ def input2_handler():
 def crea_directorio():
     os.makedirs('dir1/dir2/dir3', exist_ok=True)
     
+
+
+
+
 def main():
 
     # Crea el menú raíz
-
     menu = ConsoleMenu("Root Menu", "This is the Root Menu Subtitle")
 
     item1 = MenuItem("Item 1")
@@ -33,12 +36,11 @@ def main():
     # Crear un elemento de menú que llame a una función
 
     function_item = FunctionItem("Fun item", crea_directorio)
-    function_item = FunctionItem("hola", input2_handler)
+    function_item2 = FunctionItem("hola", input2_handler)
 
 
 
     # Cree un elemento de menú que llame a un comando del sistema, según el tipo de sistema operativo
-
     if sys.platform.startswith('win'):
         command_item = CommandItem("Command", 'cmd /c \"echo this is a shell. Press enter to continue." && set /p=\"')
     else:
@@ -47,7 +49,6 @@ def main():
 
 
     # Cree un submenú usando un menú de selección, que toma una lista de cadenas para crear los elementos del menú.
-
     submenu = SelectionMenu(["item1", "item2", "item3"], title="Selection Menu",
                             subtitle="These menu items return to the previous menu")
 
