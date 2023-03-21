@@ -10,19 +10,19 @@ print(Art)
 
 
 def crea_directorio(nombre):
-    print(nombre)
+    """ print(nombre) """
     os.makedirs('hola/dir2/dir3', exist_ok=True)
 
 
 def mostrar_menu(opciones):
-    print('Seleccione una opción:')
+    print('OPTIONS:')
     for clave in sorted(opciones):
         print(f' {clave}) {opciones[clave][0]}')
 
 
 def leer_opcion(opciones):
-    while (a := input('Opción: ')) not in opciones:
-        print('Opción incorrecta, vuelva a intentarlo.')
+    while (a := input('SELECT : ')) not in opciones:
+        print('ERROR.')
     return a
 
 
@@ -44,10 +44,11 @@ def menu_principal():
         '1': ('Simple blank flask app', accion1),
         '2': ('Flask app with example template', accion2),
         '3': ('Flask REST simple api', accion3),
-        '4': ('Salir', salir)
+        '4': ('Exit', salir),
+        '5': ('Ayuda', ayuda)
     }
 
-    generar_menu(opciones, '4')
+    generar_menu(opciones, '5')
 
 
 def accion1():
@@ -55,7 +56,6 @@ def accion1():
     print("Ingrese nombre de proyecto")
     nombre_proyecto = input()
     crea_directorio(nombre_proyecto)
-    """ print(nombre_proyecto) """
     
 
 def accion2():
@@ -69,6 +69,9 @@ def accion3():
 def salir():
     print('Saliendo')
 
+
+def ayuda():
+    print("Ayuda")
 
 if __name__ == '__main__':
     menu_principal()
