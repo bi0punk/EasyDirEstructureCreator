@@ -10,8 +10,7 @@ print(Art)
 
 
 def crea_directorio(nombre):
-    """ print(nombre) """
-    os.makedirs('hola/dir2/dir3', exist_ok=True)
+    os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
 
 
 def mostrar_menu(opciones):
