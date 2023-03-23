@@ -2,6 +2,9 @@ from art import *
 import os
 
 
+
+#CREAMOS NOMBRE DE APP MEDIANTE CODIGO ASC¢→
+
 Art=text2art("<FAST-FLASK>")
 print(Art)
 # Create the menu
@@ -25,6 +28,7 @@ def leer_opcion(opciones):
 
 def ejecutar_opcion(opcion, opciones):
     opciones[opcion][1]()
+    
 
 
 def generar_menu(opciones, opcion_salida):
@@ -47,6 +51,13 @@ def menu_principal():
 
     generar_menu(opciones, '5')
 
+
+
+
+
+
+
+#Accciones del menu
 
 def accion1():
     print('Has elegido la opción 1')
