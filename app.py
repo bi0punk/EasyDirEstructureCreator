@@ -1,19 +1,12 @@
 from art import *
 import os
 
-
-
 #CREAMOS NOMBRE DE APP MEDIANTE CODIGO ASC¢→
-
 Art=text2art("<FAST-FLASK>")
 print(Art)
+
+
 # Create the menu
-
-def crea_directorio(nombre):
-    os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
-    
-
-
 def mostrar_menu(opciones):
     print('OPTIONS:')
     for clave in sorted(opciones):
@@ -51,8 +44,6 @@ def menu_principal():
 
     generar_menu(opciones, '5')
 
-
-
 #Accciones del menu
 
 def accion1():
@@ -76,6 +67,20 @@ def salir():
 
 def ayuda():
     print("Ayuda")
+
+#Funciones propias del script
+
+
+#Crea una carpeta con el nombre del proyecto
+def crea_directorio(nombre):
+    os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
+    
+
+
+
+
+
+
 
 if __name__ == '__main__':
     menu_principal()
