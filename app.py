@@ -8,7 +8,7 @@ print(Art)
 
 # Create the menu
 def mostrar_menu(opciones):
-    print(' Seleccione una opción / Select a option:')
+    print(' Seleccione una opción / Select an option:')
     for clave in sorted(opciones):
         print(f' {clave}) {opciones[clave][0]}')
 
