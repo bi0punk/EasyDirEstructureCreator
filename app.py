@@ -8,13 +8,13 @@ print(Art)
 
 # Create the menu
 def mostrar_menu(opciones):
-    print('OPTIONS:')
+    print(' Seleccione una opción / Select a option:')
     for clave in sorted(opciones):
         print(f' {clave}) {opciones[clave][0]}')
 
 
 def leer_opcion(opciones):
-    while (a := input('SELECT : ')) not in opciones:
+    while (a := input(' A seleccionado : ')) not in opciones:
         print('ERROR.')
     return a
 
