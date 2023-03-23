@@ -6,11 +6,9 @@ Art=text2art("<FAST-FLASK>")
 print(Art)
 # Create the menu
 
-
-
-
 def crea_directorio(nombre):
     os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
+    
 
 
 def mostrar_menu(opciones):
