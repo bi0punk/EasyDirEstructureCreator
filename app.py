@@ -53,10 +53,6 @@ def menu_principal():
 
 
 
-
-
-
-
 #Accciones del menu
 
 def accion1():
