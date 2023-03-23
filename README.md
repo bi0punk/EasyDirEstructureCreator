@@ -1,2 +1,3 @@
-# aut-project-folder
-script sencillo para automatizar la creación de las estructura de directorios para nuestros proyectos
+#FasT-FlasK
+
+Pequeño script escrito en Python que simplifica la creacion de la estructura de proyectos en Flask segun nuestra necesidad.
