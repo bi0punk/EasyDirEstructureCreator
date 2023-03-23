@@ -35,11 +35,11 @@ def generar_menu(opciones, opcion_salida):
 
 def menu_principal():
     opciones = {
-        '1': ('Simple blank flask app', accion1),
-        '2': ('Flask app with example template', accion2),
-        '3': ('Flask REST simple api', accion3),
-        '4': ('Exit', salir),
-        '5': ('Ayuda', ayuda)
+        '1': ('Simple Blank Flask App', accion1),
+        '2': ('Flask App with example Template', accion2),
+        '3': ('Flask Simple REST API', accion3),
+        '4': ('Exit / Salir', salir),
+        '5': ('Ayuda / Help', ayuda)
     }
 
     generar_menu(opciones, '5')
