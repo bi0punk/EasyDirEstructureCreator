@@ -74,7 +74,10 @@ def ayuda():
 #Crea una carpeta con el nombre del proyecto
 def crea_directorio(nombre):
     os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
-    
+    f = open ('holamundo.txt','w')
+    f.write('hola mundo')
+    f.close()
+        
 
 
 
