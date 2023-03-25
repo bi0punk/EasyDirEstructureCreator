@@ -74,7 +74,7 @@ def ayuda():
 #Crea una carpeta con el nombre del proyecto
 def crea_directorio(nombre):
     ruta = f'{nombre}/templates/'
-    os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
+    os.makedirs(f'{nombre}/templates/', exist_ok=True)
     fecha_genera = datetime.now()
     f = open (f'{ruta}app.py','w')
     f.write("from flask import Flask\n")
