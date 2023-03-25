@@ -76,6 +76,17 @@ def crea_directorio(nombre):
     os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
     f = open ('holamundo.txt','w')
     f.write('hola mundo')
+
+
+    f.write("from flask import Flask")
+
+    f.write("app = Flask(__name__)")
+
+    f.write("@app.route("/")")
+    f.write("def hello_world():")
+    f.write('   return "<p>Hello, World!</p>"')
+
+
     f.close()
         
 
