@@ -82,11 +82,9 @@ def crea_directorio(nombre):
 
     f.write("app = Flask(__name__)")
 
-    f.write("@app.route("/")")
+    f.write('@app.route("/")')
     f.write("def hello_world():")
     f.write('   return "<p>Hello, World!</p>"')
-
-
     f.close()
         
 
