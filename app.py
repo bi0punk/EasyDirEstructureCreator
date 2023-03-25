@@ -1,6 +1,6 @@
 from art import *
 import os
-
+from datetime import datetime
 #CREAMOS NOMBRE DE APP MEDIANTE CODIGO ASC¢→
 Art=text2art("<FAST-FLASK>")
 print(Art)
@@ -73,18 +73,15 @@ def ayuda():
 
 #Crea una carpeta con el nombre del proyecto
 def crea_directorio(nombre):
+    ruta = f'{nombre}/templates/'
     os.makedirs(f'{nombre}/templates/index.html', exist_ok=True)
-    f = open ('holamundo.txt','w')
-    f.write('hola mundo')
-
-
-    f.write("from flask import Flask")
-
-    f.write("app = Flask(__name__)")
-
-    f.write('@app.route("/")')
-    f.write("def hello_world():")
-    f.write('   return "<p>Hello, World!</p>"')
+    fecha_genera = datetime.now()
+    f = open (f'{ruta}app.py','w')
+    f.write("from flask import Flask\n")
+    f.write("app = Flask(__name__)\n")
+    f.write('@app.route("/")\n')
+    f.write("def hello_world():\n")
+    f.write('   return "<p>Hello World from FasT-FlasK!, generated {{fecha_genera}}</p>"')
     f.close()
         
 
