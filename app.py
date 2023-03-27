@@ -91,7 +91,7 @@ def crea_directorio(nombre):
         
 
 
-
+def crea_directorio_template(nombre):
 
 
 
