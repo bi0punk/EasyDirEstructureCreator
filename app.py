@@ -92,6 +92,42 @@ def crea_directorio(nombre):
 
 
 def crea_directorio_template(nombre):
+    ruta = f'{nombre}/templates/'
+    os.makedirs(f'{nombre}/templates/', exist_ok=True)
+    fecha_genera = datetime.now()
+    """ f = open (f'{ruta}app.py','w') """
+    f = open (f'{nombre}/templates/index.html','w')
+    f.write("from flask import Flask\n")
+    f.write("<!DOCTYPE html>")
+    f.write('<html lang="en">')
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            </head>
+            <body>
+                
+            </body>
+</html>
+
+    f.close()
+
+
+    f = open (f'{nombre}/app.py','w')
+    f.write("from flask import Flask\n")
+    f.write('\n')
+    f.write('\n')
+    f.write("app = Flask(__name__)\n")
+    f.write('\n')
+    f.write('\n')
+    f.write('@app.route("/")\n')
+    f.write("def hello_world():\n")
+    f.write(f'   return "<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>"')
+    f.close()
+        
+
+
 
 
 
