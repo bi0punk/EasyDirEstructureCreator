@@ -86,7 +86,7 @@ def crea_directorio(nombre):
     f.write('\n')
     f.write('@app.route("/")\n')
     f.write("def hello_world():\n")
-    f.write(f'   return "<p>Hello World from FasT-FlasK!, generated {fecha_genera}</p>"')
+    f.write(f'   return "<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>"')
     f.close()
         
 
