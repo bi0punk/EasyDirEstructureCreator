@@ -84,7 +84,6 @@ def crea_directorio(nombre):
     f.write("app = Flask(__name__)\n")
     f.write('\n')
     f.write('\n')
-    f.write('\n')
     f.write('@app.route("/")\n')
     f.write("def hello_world():\n")
     f.write('   return "<p>Hello World from FasT-FlasK!, generated {{fecha_genera}}</p>"')
