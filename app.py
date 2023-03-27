@@ -100,17 +100,16 @@ def crea_directorio_template(nombre):
     f.write("from flask import Flask\n")
     f.write("<!DOCTYPE html>")
     f.write('<html lang="en">')
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
-            </head>
-            <body>
-                
-            </body>
-</html>
-
+    f.write('<head>')
+    f.write            <meta charset="UTF-8">
+    f.write            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    f.write            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    f.write            <title>Document</title>
+    f.write       </head>
+    f.write        <body>
+    f.write            
+    f.write        </body>
+    f.write</html>
     f.close()
 
 
