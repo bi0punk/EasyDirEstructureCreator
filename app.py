@@ -6,7 +6,7 @@ Art=text2art("<FAST-FLASK>")
 print(Art)
 
 
-# Create the menu
+# Crea el menu
 def mostrar_menu(opciones):
     print(' Seleccione una opción / Select an option: \n')
     for clave in sorted(opciones):
@@ -44,21 +44,18 @@ def menu_principal():
 
     generar_menu(opciones, '5')
 
-#Accciones del menu
 
+#Clase para crear un nuevo archivo app.py de Flask
 class Flask_main():
     def __init__(self, filename, ruta, contenido):
         self.filenama = filename
         self.ruta = ruta
         contenido = contenido
-
         mainpy = Flask_main(filename='app.py', ruta=None, contenido='')
 
 
-
-
 def accion1():
-    print('Has elegido la opción 1')
+    print('Has elegido la opción 1\n')
     print("Ingrese nombre de proyecto")
     nombre_proyecto = input()
     crea_directorio(nombre_proyecto)
@@ -79,9 +76,11 @@ def salir():
 def ayuda():
     print("Ayuda")
 
+
+
+
+
 #Funciones propias del script
-
-
 #Crea una carpeta con el nombre del proyecto
 def crea_directorio(nombre):
     ruta = f'{nombre}/templates/'
