@@ -60,9 +60,13 @@ def accion1():
     nombre_proyecto = input()
     crea_directorio(nombre_proyecto)
     
+    
 
 def accion2():
-    print('Has elegido la opción 2')
+    print('Has elegido la opción 2\n')
+    print("Ingrese nombre de proyecto")
+    nombre_proyecto = input()
+    crea_directorio(nombre_proyecto)
 
 
 def accion3():
@@ -136,10 +140,6 @@ def crea_directorio_template(nombre):
     f.write(f'   return "<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>"')
     f.close()
         
-
-
-
-
 
 
 if __name__ == '__main__':
