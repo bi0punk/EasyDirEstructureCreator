@@ -46,6 +46,17 @@ def menu_principal():
 
 #Accciones del menu
 
+class Flask_main():
+    def __init__(self, filename, ruta, contenido):
+        self.filenama = filename
+        self.ruta = ruta
+        contenido = contenido
+
+        mainpy = Flask_main(filename='app.py', ruta=None, contenido='')
+
+
+
+
 def accion1():
     print('Has elegido la opción 1')
     print("Ingrese nombre de proyecto")
@@ -101,15 +112,16 @@ def crea_directorio_template(nombre):
     f.write("<!DOCTYPE html>")
     f.write('<html lang="en">')
     f.write('<head>')
-    f.write            <meta charset="UTF-8">
-    f.write            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    f.write            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    f.write            <title>Document</title>
-    f.write       </head>
-    f.write        <body>
-    f.write            
-    f.write        </body>
-    f.write</html>
+    f.write('<meta charset="UTF-8">')
+    f.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">')
+    f.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'>")
+    f.write("<title>FasT - FlasK</title>")
+    f.write("</head>")
+    f.write("<body>")
+    f.write(f"<h1> Hola mundo Fast-FlasK Generated: {fecha_genera}</h1>")        
+    f.write("\n")            
+    f.write("</body>")        
+    f.write("</html>")
     f.close()
 
 
