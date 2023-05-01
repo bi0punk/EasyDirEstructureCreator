@@ -1,7 +1,9 @@
 from art import *
 import os
 from datetime import datetime
-#CREAMOS NOMBRE DE APP MEDIANTE CODIGO ASC¢→
+
+
+
 Art=text2art("<FAST-FLASK>")
 print(Art)
 
@@ -79,10 +81,6 @@ def salir():
 
 def ayuda():
     print("Ayuda")
-
-
-
-
 
 #Funciones propias del script
 #Crea una carpeta con el nombre del proyecto
