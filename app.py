@@ -1,39 +1,33 @@
-from art import *
+from art import text2art
 import os
-from datetime import datetime
+import datetime
 
-
-
-Art=text2art("<FAST-FLASK>")
+Art = text2art("<FAST-FLASK>")
 print(Art)
 
-
-# Crea el menu
 def mostrar_menu(opciones):
-    print(' Seleccione una opción / Select an option: \n')
+    print('Seleccione una opción / Select an option:\n')
     for clave in sorted(opciones):
-        print(f' {clave}) {opciones[clave][0]}')
-
+        print(f'{clave}) {opciones[clave][0]}')
 
 def leer_opcion(opciones):
-    while (a := input(' \nA seleccionado : ')) not in opciones:
+    while True:
+        a = input('\nHa seleccionado: ')
+        if a in opciones:
+            return a
         print('ERROR.')
-    return a
-
 
 def ejecutar_opcion(opcion, opciones):
     opciones[opcion][1]()
-    
-
 
 def generar_menu(opciones, opcion_salida):
-    opcion = None
-    while opcion != opcion_salida:
+    while True:
         mostrar_menu(opciones)
         opcion = leer_opcion(opciones)
         ejecutar_opcion(opcion, opciones)
         print()
-
+        if opcion == opcion_salida:
+            break
 
 def menu_principal():
     opciones = {
@@ -43,102 +37,29 @@ def menu_principal():
         '4': ('Exit / Salir', salir),
         '5': ('Ayuda / Help', ayuda)
     }
-
     generar_menu(opciones, '5')
 
-
-#Clase para crear un nuevo archivo app.py de Flask
-class Flask_main():
+class Flask_main:
     def __init__(self, filename, ruta, contenido):
         self.filenama = filename
         self.ruta = ruta
         contenido = contenido
         mainpy = Flask_main(filename='app.py', ruta=None, contenido='')
 
-
-def accion1():
-    print('Has elegido la opción 1\n')
-    print("Ingrese nombre de proyecto")
-    nombre_proyecto = input()
-    crea_directorio(nombre_proyecto)
-    
-    
-
-def accion2():
-    print('Has elegido la opción 2\n')
-    print("Ingrese nombre de proyecto")
-    nombre_proyecto = input()
-    crea_directorio(nombre_proyecto)
-
-
-def accion3():
-    print('Has elegido la opción 3')
-
-
-def salir():
-    print('Saliendo')
-
-
-def ayuda():
-    print("Ayuda")
-
-#Funciones propias del script
-#Crea una carpeta con el nombre del proyecto
-def crea_directorio(nombre):
+def crear_archivo(nombre, contenido):
     ruta = f'{nombre}/templates/'
-    os.makedirs(f'{nombre}/templates/', exist_ok=True)
-    fecha_genera = datetime.now()
-    """ f = open (f'{ruta}app.py','w') """
-    f = open (f'{nombre}/app.py','w')
-    f.write("from flask import Flask\n")
-    f.write('\n')
-    f.write('\n')
-    f.write("app = Flask(__name__)\n")
-    f.write('\n')
-    f.write('\n')
-    f.write('@app.route("/")\n')
-    f.write("def hello_world():\n")
-    f.write(f'   return "<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>"')
-    f.close()
-        
+    os.makedirs(ruta, exist_ok=True)
+    fecha_genera = datetime.datetime.now()
 
+    with open(f'{nombre}/app.py', 'w') as f:
+        f.write("from flask import Flask\n\n")
+        f.write("app = Flask(__name__)\n\n")
+        f.write("@app.route('/')\n")
+        f.write("def hello_world():\n")
+        f.write(f"    return '<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>'\n")
 
-def crea_directorio_template(nombre):
-    ruta = f'{nombre}/templates/'
-    os.makedirs(f'{nombre}/templates/', exist_ok=True)
-    fecha_genera = datetime.now()
-    """ f = open (f'{ruta}app.py','w') """
-    f = open (f'{nombre}/templates/index.html','w')
-    f.write("from flask import Flask\n")
-    f.write("<!DOCTYPE html>")
-    f.write('<html lang="en">')
-    f.write('<head>')
-    f.write('<meta charset="UTF-8">')
-    f.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">')
-    f.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'>")
-    f.write("<title>FasT - FlasK</title>")
-    f.write("</head>")
-    f.write("<body>")
-    f.write(f"<h1> Hola mundo Fast-FlasK Generated: {fecha_genera}</h1>")        
-    f.write("\n")            
-    f.write("</body>")        
-    f.write("</html>")
-    f.close()
-
-
-    f = open (f'{nombre}/app.py','w')
-    f.write("from flask import Flask\n")
-    f.write('\n')
-    f.write('\n')
-    f.write("app = Flask(__name__)\n")
-    f.write('\n')
-    f.write('\n')
-    f.write('@app.route("/")\n')
-    f.write("def hello_world():\n")
-    f.write(f'   return "<p>Hello World from FasT-FlasK!, Generated: {fecha_genera} </p>"')
-    f.close()
-        
-
-
-if __name__ == '__main__':
-    menu_principal()
+    with open(f'{ruta}index.html', 'w') as f:
+        f.write("<!DOCTYPE html>\n")
+        f.write('<html lang="en">\n')
+        f.write("<head>\n")
+        f.write("<meta charset='UTF-
