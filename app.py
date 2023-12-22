@@ -1,64 +1,69 @@
 from art import text2art
-import os
 import datetime
 from flask import Flask
 
-Art = text2art("<FAST-FLASK>")
-print(Art)
+ERROR_MESSAGE = 'ERROR. Seleccione una opción válida.'
+EXIT_MESSAGE = 'Saliendo...'
+HELP_MESSAGE = 'Mostrando ayuda...'
 
-def mostrar_menu(opciones):
+def print_title():
+    title = text2art("<FAST-FLASK>")
+    print(title)
+
+def print_menu(options):
     print('Seleccione una opción / Select an option:\n')
-    for clave, valor in opciones.items():
-        print(f'{clave}) {valor[0]}')
+    for key, value in options.items():
+        print(f'{key}) {value[0]}')
 
-def leer_opcion(opciones):
+def get_user_choice(options):
     while True:
-        a = input('\nHa seleccionado: ')
-        if a in opciones:
-            return a
-        print('ERROR.')
+        user_input = input('\nHa seleccionado: ')
+        if user_input in options:
+            return user_input
+        print(ERROR_MESSAGE)
 
-def accion1():
+def run_flask_app():
     app = Flask(__name__)
 
     @app.route('/')
     def hello_world():
-        fecha_genera = datetime.datetime.now()
-        return f'<p>Hello World from FasT-FlasK!, Generated: {fecha_genera}</p>'
-
+        now = datetime.datetime.now()
+        return f'<p>Hello World from FasT-FlasK!, Generated: {now}</p>'
     app.run()
 
-def accion2():
+def action2():
     print('Ejecutando acción 2')
 
-def accion3():
+def action3():
     print('Ejecutando acción 3')
 
-def salir():
-    print('Saliendo...')
+def exit_program():
+    print(EXIT_MESSAGE)
     exit()
 
-def ayuda():
-    print('Mostrando ayuda...')
+def show_help():
+    print(HELP_MESSAGE)
 
-def generar_menu(opciones, opcion_salida):
+def generate_menu(options, exit_option):
     while True:
-        mostrar_menu(opciones)
-        opcion = leer_opcion(opciones)
-        opciones[opcion][1]()
+        print_menu(options)
+        user_choice = get_user_choice(options)
+        options[user_choice][1]()
         print()
-        if opcion == opcion_salida:
+        if user_choice == exit_option:
             break
 
-def menu_principal():
-    opciones = {
-        '1': ('Simple Blank Flask App', accion1),
-        '2': ('Flask App with example Template', accion2),
-        '3': ('Flask Simple REST API', accion3),
-        '4': ('Exit / Salir', salir),
-        '5': ('Ayuda / Help', ayuda)
+def main():
+    menu_options = {
+        '1': ('Simple Blank Flask App', run_flask_app),
+        '2': ('Flask App with example Template', action2),
+        '3': ('Flask Simple REST API', action3),
+        '4': ('Exit / Salir', exit_program),
+        '5': ('Ayuda / Help', show_help)
     }
-    generar_menu(opciones, '5')
+    generate_menu(menu_options, '4')
 
 if __name__ == "__main__":
-    menu_principal()
+    print_title()
+    main()
+
